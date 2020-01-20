@@ -496,8 +496,9 @@ class AmazonTLD(Singleton):
         if isEpisode:
             infoLabels['TVShowTitle'] = filename
             nfoType = 'episodedetails'
-            filename = '%s - S%02dE%02d - %s' % (infoLabels['TVShowTitle'], infoLabels['Season'],
-                                                 infoLabels['Episode'], infoLabels['Title'])
+            """filename = '%s - S%02dE%02d - %s' % (infoLabels['TVShowTitle'], infoLabels['Season'],
+                                                 infoLabels['Episode'], infoLabels['Title'])"""
+            filename = '%s - %s' % (infoLabels['Premiered'], infoLabels['Title'])
 
         if self._g.addon.getSetting('cr_nfo') == 'true':
             self.CreateInfoFile(filename, ExportPath, nfoType, infoLabels, language)
